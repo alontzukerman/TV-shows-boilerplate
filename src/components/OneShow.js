@@ -9,7 +9,6 @@ function OneShow() {
   const { id } = useParams(); //this is the selected show id
 
   const [status , setStatus] = useState(localStorage.getItem(id) || false);
-  console.log(status);
   const [show , setShow] = useState({});
 
   
@@ -19,7 +18,6 @@ function OneShow() {
   
   async function getTvShowById() {
     const { data } = await axios.get(`https://www.episodate.com/api/show-details?q=${id}`)
-    console.log(data.tvShow);
     setShow(data.tvShow);
   }
   
